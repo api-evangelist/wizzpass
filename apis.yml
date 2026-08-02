@@ -1,7 +1,26 @@
 aid: wizzpass
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/wizzpass.png
 name: WizzPass
-description: WizzPass is a company surfaced as a portfolio company of techstars and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: WizzPass is a visitor and workplace access management platform, surfaced
+  as a Techstars portfolio company and added to the API Evangelist network as a lead
+  for enrichment. At the time of this enrichment pass the company's public web presence
+  at wizzpass.com is dormant behind Cloudflare (HTTP 409 / error 1001) and refuses
+  TLS handshakes, so no live developer portal, documentation, OpenAPI, or API surface
+  could be reached. Email infrastructure is active (AWS SES inbound in eu-west-1, SPF
+  authorizing Amazon SES and TeamSupport), indicating an operating SaaS organization
+  even though the site itself is not currently serving. This profile records the honest
+  probed state and awaits a future pass once the web/API surface is reachable.
 url: https://raw.githubusercontent.com/api-evangelist/wizzpass/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +30,14 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Visitor Management
+- Access Control
+- Workplace
+- Security
+- Techstars
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +45,12 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/wizzpass-domain-security.yml
 - type: Website
   url: https://wizzpass.com/
+x-enrichment:
+  date: '2026-07-21'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
